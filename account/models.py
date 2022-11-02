@@ -38,6 +38,7 @@ class CustomUser(AbstractUser):
     password = models.CharField(max_length=100)
     activation_code = models.CharField(max_length=255, blank=True)
     phone = models.CharField(max_length=40,blank=True,null=True)
+    username = models.CharField(max_length=40,blank=True,null=True)
     first_name = models.CharField(max_length=100, blank=True)
     last_name = models.CharField(max_length=100, blank=True)
     is_active = models.BooleanField(_('active'), default=False,
