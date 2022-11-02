@@ -53,7 +53,7 @@ def callback_query(call):
     if call.data == "Услуги":
         bot.send_message(call.from_user.id, "Список услуг", reply_markup=service)
     elif call.data == "Сайт":
-        bot.send_message(call.from_user.id, "http://34.125.225.234//api/v1/docs/", reply_markup=back)
+        bot.send_message(call.from_user.id, "http://34.125.225.234/api/v1/docs/", reply_markup=back)
     elif call.data == "Связь":
         bot.send_contact(call.from_user.id, "+996553937937", "Rauf", "Baltabaev", reply_markup=back)
     elif call.data == "Назад":
