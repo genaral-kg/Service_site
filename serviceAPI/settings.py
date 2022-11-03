@@ -160,9 +160,9 @@ CORS_ALLOW_ALL_ORIGINS =True
 CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOWED_ORIGINS = [
-    "http://34.125.225.234"
+    "http://34.125.225.234",
     # "http://localhost:8000",
-    # "http://127.0.0.1:8000",
+    "http://127.0.0.1:8000",
 ]
 
 CORS_ALLOW_METHODS = [
@@ -173,17 +173,17 @@ CORS_ALLOW_METHODS = [
 'POST',
 'PUT',
 ]
-# CORS_ALLOW_HEADERS = [
-# 'accept',
-# 'accept-encoding',
-# 'authorization',
-# 'content-type',
-# 'dnt',
-# 'origin',
-# 'user-agent',
-# 'x-csrftoken',
-# 'x-requested-with',
-# ]
+CORS_ALLOW_HEADERS = [
+'accept',
+'accept-encoding',
+'authorization',
+'content-type',
+'dnt',
+'origin',
+'user-agent',
+'x-csrftoken',
+'x-requested-with',
+]
 # ---------------------
 
 

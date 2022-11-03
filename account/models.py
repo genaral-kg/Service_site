@@ -37,14 +37,15 @@ class CustomUser(AbstractUser):
     email = models.EmailField('email address', unique=True)
     password = models.CharField(max_length=100)
     activation_code = models.CharField(max_length=255, blank=True)
-    phone = models.CharField(max_length=40,blank=True,null=True)
-    username = models.CharField(max_length=40,blank=True,null=True)
-    first_name = models.CharField(max_length=100, blank=True)
-    last_name = models.CharField(max_length=100, blank=True)
+    # phone = models.CharField(max_length=40,blank=True,null=True)
+    # login = models.CharField(max_length=40,blank=True,null=True)
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
     is_active = models.BooleanField(_('active'), default=False,
                                     help_text=_(
                                         'Designates whether this user should be treated as active.' 
                                         'Unselect this  instead of deleting accounts.'))
+
 
     objects = UserManager()
 
