@@ -3,7 +3,7 @@ from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
 from rest_framework_simplejwt.exceptions import TokenError
 from rest_framework_simplejwt.tokens import RefreshToken
-from .models import Spam_Contacts
+from .models import Spam_Contacts, CustomUser
 
 User = get_user_model()
 
@@ -11,10 +11,11 @@ User = get_user_model()
 class RegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(min_length=8, max_length=20, required=True, write_only=True)
     password2 = serializers.CharField(min_length=8, max_length=20, required=True, write_only=True)
+    user = serializers.IntegerField(required=True)
 
     class Meta:
         model = User
-        fields = ('email', 'password', 'password2', 'last_name', 'first_name',)
+        fields = ('email', 'password', 'password2', 'last_name', 'first_name','avatar', 'user')
 
     def validate(self, attrs):
         password2 = attrs.pop('password2')
@@ -95,4 +96,9 @@ class SpamViewSerializer(serializers.ModelSerializer):
             )
         return attrs
 
+
+class ExecuterSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CustomUser
+        fields = '__all__'
 

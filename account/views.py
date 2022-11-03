@@ -18,6 +18,16 @@ User = get_user_model()
 """
 РЕГИСТРАЦИЯ ВЮШКА
 """
+class ExecutersApiView(APIView):
+    permission_classes = (permissions.AllowAny,)
+    def get(self, request):
+        qs = User.objects.filter(user=2)
+        print(qs, '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+        serializer = serializers.ExecuterSerializer(qs, many=True)
+        # serializer.is_valid(raise_exception=True)
+        return Response(serializer.data, 200)
+
+
 class RegistrationView(APIView):
     permission_classes = (permissions.AllowAny,)
 

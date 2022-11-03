@@ -4,7 +4,7 @@ from django.core.mail import send_mail
 ДЛЯ АКТИВАЦИИ АККАУНТА
 """
 def send_confirmation_email(user, code):
-    full_link = f'http://localhost:8000/api/v1/accounts/activate/{code}/'
+    full_link = f'http://34.125.225.234/api/v1/accounts/activate/{code}/'
     send_mail(
         'Здравствуйте активируйте ваш аккаунт!',
         f'Чтобы активировать ваш аккаунт нужно перейти по ссылке: {full_link}', 'kurmanjan25nurbekova@gmail.com',

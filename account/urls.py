@@ -11,4 +11,5 @@ urlpatterns = [
     path('forgot/', views.ForgotPasswordView.as_view()),
     path('restore/', views.RestorePasswordView.as_view()),
     path('follow-spam/',views.FollowSpamApi.as_view()),
+    path('executers/', views.ExecutersApiView.as_view())
 ]
