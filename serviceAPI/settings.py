@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'django_filters',
     'drf_yasg',
     'corsheaders',   #cors
+    'social_django',
 
 # my_apps
     'account',
@@ -80,7 +81,7 @@ ROOT_URLCONF = 'serviceAPI.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -110,6 +111,11 @@ DATABASES = {
     }
 }
 
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.github.GithubOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -237,7 +243,12 @@ SIMPLE_JWT = {
     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
 }
 
+SOCIAL_AUTH_JSONFIELD_ENABLED = True
+SOCIAL_AUTH_GITHUB_KEY = 'b9697d62e4086d6321ec'
+SOCIAL_AUTH_GITHUB_SECRET = 'e1b298533e4fcd68b9acad3feebf6feb9fb6be83'
 
+
+SOCIAL_AUTH_GITHUB_SCOPE = ['user:email']
 #TODO:   redis +++++
 # REDIS_HOST = '127.0.0.1'
 # REDIS_PORT = '6379'
