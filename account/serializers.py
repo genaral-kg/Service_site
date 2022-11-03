@@ -19,9 +19,13 @@ class RegisterSerializer(serializers.ModelSerializer):
     def validate(self, attrs):
         password2 = attrs.pop('password2')
         if attrs['password'] != password2:
-            raise serializers.ValidationError('Passwords did not match!')
-        if not attrs['password'].isalnum():
-            raise serializers.ValidationError('Password field must contain alpha symbols and numbers!')
+            raise serializers.ValidationError('Пароли не совпадают!')
+        if attrs['password'].isalpha():
+            raise serializers.ValidationError(
+                'Пароль должен содержать в себе буквы и цифры. Минимальная длина - 8 знаков.')
+        if attrs['password'].isdigit():
+            raise serializers.ValidationError(
+                'Пароль должен содержать в себе буквы и цифры. Минимальная длина - 8 знаков.')
         return attrs
 
     def create(self, validated_data):
