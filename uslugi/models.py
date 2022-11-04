@@ -22,12 +22,15 @@ User = get_user_model()
 
 class Uslugi(models.Model):
     owner = models.ForeignKey(User,related_name='uslugi',on_delete=models.CASCADE)
-    title = models.CharField(max_length=100, unique=True)
-    desc = models.CharField(max_length=250, null=True, blank=True)
-    image2 = models.ImageField(upload_to='media/uslugi/', null=True, blank=True)
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, blank=True, null=True)
     experience = models.PositiveSmallIntegerField(blank=True,null=True)
+    working_days = models.CharField(max_length=200,blank=True,null=True)
+    hour_from = models.PositiveSmallIntegerField(blank=True,null=True)
+    hour_to = models.PositiveSmallIntegerField(blank=True,null=True)
+    desc = models.CharField(max_length=250, null=True, blank=True)
     price = models.PositiveSmallIntegerField(blank=True,null=True)
+    image2 = models.ImageField(upload_to='media/uslugi/',blank=True,null=True)
+
 
 
     class Meta:

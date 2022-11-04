@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'account',
     'category',
     'uslugi',
+    'city',
     # 'order',
     # 'product',
     # 'rating',

@@ -4,7 +4,7 @@ from django.contrib.auth.base_user import BaseUserManager
 from django.contrib.auth.models import AbstractUser
 from django.utils.translation import gettext_lazy as _
 
-from account.cities import City
+from city.models import City
 from category.models import Category
 
 
@@ -49,7 +49,7 @@ class CustomUser(AbstractUser):
     password = models.CharField(max_length=100)
     activation_code = models.CharField(max_length=255, blank=True)
     username = models.CharField(max_length=100, blank=True)
-    # phone = models.CharField(max_length=40,blank=True,null=True)
+    phone = models.CharField(max_length=40,blank=True,null=True)
     # login = models.CharField(max_length=40,blank=True,null=True)
     user = models.PositiveSmallIntegerField(choices=AccountCategory.choice, null=True)
     first_name = models.CharField(max_length=100)

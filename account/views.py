@@ -132,10 +132,3 @@ class FollowSpamApi(APIView):
 
 
 
-
-
-# def send_mail(request):
-#     html = "<http><body>Hello! Check your gmail</body></http>"
-#     send_confirmation_email('amannurbekow@gmail.com', '1234')
-#     return HttpResponse(html)
-

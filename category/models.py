@@ -11,9 +11,13 @@ class Category(models.Model):
     # def save(self, *args, **kwargs): Способ №1
     #     self.slug = slugify(self.name)
     #     super().save(*args, **kwargs)
+    class Meta:
+        verbose_name = 'Категория'
+        verbose_name_plural = 'Категории услуг'
 
     def __str__(self):
         return self.name
+
 
 
 @receiver(pre_save, sender=Category)
