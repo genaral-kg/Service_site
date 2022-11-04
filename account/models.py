@@ -48,7 +48,7 @@ class CustomUser(AbstractUser):
     email = models.EmailField('email address', unique=True)
     password = models.CharField(max_length=100)
     activation_code = models.CharField(max_length=255, blank=True)
-    username = models.CharField(max_length=100, blank=True)
+    username = models.CharField(max_length=100, blank=True, null=True)
     phone = models.CharField(max_length=40,blank=True,null=True)
     # login = models.CharField(max_length=40,blank=True,null=True)
     user = models.PositiveSmallIntegerField(choices=AccountCategory.choice, null=True)
@@ -58,16 +58,16 @@ class CustomUser(AbstractUser):
                                     help_text=_(
                                         'Designates whether this user should be treated as active.' 
                                         'Unselect this  instead of deleting accounts.'))
-    category = models.ForeignKey(Category,on_delete=models.CASCADE,null=True, blank=True)
-    subcategory = models.CharField(max_length=100,blank=True,null=True)
-    avatar = models.ImageField(upload_to='media/', null=True, blank=True)
-    passwordImage = models.ImageField(upload_to='media/passwordImage',blank=True,null=True)
-    city = models.ForeignKey(City,blank=True,null=True,on_delete=models.SET_NULL)
-    about_me = models.TextField(blank=True,null=True)
-    video = models.FileField(upload_to='media/video_about_me', null=True,blank=True,
-                             validators=[
-                                 FileExtensionValidator(allowed_extensions=['MOV', 'avi', 'mp4', 'webm', 'mkv'])])
-    birthday = models.DateTimeField(blank=True,null=True)
+    # category = models.ForeignKey(Category,on_delete=models.CASCADE,null=True, blank=True)
+    # subcategory = models.CharField(max_length=100,blank=True,null=True)
+    # avatar = models.ImageField(upload_to='media/', null=True, blank=True)
+    # passwordImage = models.ImageField(upload_to='media/passwordImage',blank=True,null=True)
+    # city = models.ForeignKey(City,blank=True,null=True,on_delete=models.SET_NULL)
+    # about_me = models.TextField(blank=True,null=True)
+    # video = models.FileField(upload_to='media/video_about_me', null=True,blank=True,
+    #                          validators=[
+    #                              FileExtensionValidator(allowed_extensions=['MOV', 'avi', 'mp4', 'webm', 'mkv'])])
+    # birthday = models.DateTimeField(blank=True,null=True)
 
 
 

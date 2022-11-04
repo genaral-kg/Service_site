@@ -11,7 +11,7 @@ User = get_user_model()
 #    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='images')
 #
 #    @staticmethod
-#    def generate_name():
+#    def generate_name():k
 #       from random import randint
 #       return 'image' + str(randint(100000, 1000000))
 #
@@ -24,12 +24,9 @@ class Uslugi(models.Model):
     owner = models.ForeignKey(User,related_name='uslugi',on_delete=models.CASCADE)
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, blank=True, null=True)
     experience = models.PositiveSmallIntegerField(blank=True,null=True)
-    working_days = models.CharField(max_length=200,blank=True,null=True)
-    hour_from = models.PositiveSmallIntegerField(blank=True,null=True)
-    hour_to = models.PositiveSmallIntegerField(blank=True,null=True)
     desc = models.CharField(max_length=250, null=True, blank=True)
     price = models.PositiveSmallIntegerField(blank=True,null=True)
-    image2 = models.ImageField(upload_to='media/uslugi/',blank=True,null=True)
+
 
 
 

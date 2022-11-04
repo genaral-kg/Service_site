@@ -22,3 +22,4 @@ class UslugiViewSet(ModelViewSet):
 
 
 
+
