@@ -60,7 +60,7 @@ class CustomUser(AbstractUser):
                                         'Unselect this  instead of deleting accounts.'))
     # category = models.ForeignKey(Category,on_delete=models.CASCADE,null=True, blank=True)
     # subcategory = models.CharField(max_length=100,blank=True,null=True)
-    # avatar = models.ImageField(upload_to='media/', null=True, blank=True)
+    avatar = models.ImageField(upload_to='media/', null=True, blank=True)
     # passwordImage = models.ImageField(upload_to='media/passwordImage',blank=True,null=True)
     # city = models.ForeignKey(City,blank=True,null=True,on_delete=models.SET_NULL)
     # about_me = models.TextField(blank=True,null=True)
