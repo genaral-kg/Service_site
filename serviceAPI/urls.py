@@ -13,6 +13,7 @@ from drf_yasg import openapi
 
 from account.views import auth
 from category.views import CategoryViewSet
+from uslugi.views import UslugiViewSet
 
 schema_view = get_schema_view(
    openapi.Info(
@@ -28,7 +29,10 @@ schema_view = get_schema_view(
 )
 
 router = SimpleRouter()                                              #МАРШРУТИЗАТОР
-router.register('categories',CategoryViewSet)                       #СОЗДАЕТ ПУТЬ ДЛЯ КАТЕГОРИИ
+router.register('categories',CategoryViewSet)
+router.register('uslugi',UslugiViewSet)
+
+#СОЗДАЕТ ПУТЬ ДЛЯ КАТЕГОРИИ
 # router.register('products',ProductViewSet)
 
 
@@ -40,7 +44,8 @@ urlpatterns = [
     path('api/v1/',include(router.urls)),                             ####
     path('api/v1/accounts/', include('account.urls')),
     path('', include('social_django.urls', namespace='social')),
-    path('auth/', auth)
+    path('auth/', auth),
+    # path('', include('uslugi.urls'))
     # path('api/v1/orders/',include('order.urls')),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

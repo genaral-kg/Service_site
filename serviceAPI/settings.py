@@ -57,6 +57,7 @@ INSTALLED_APPS = [
 # my_apps
     'account',
     'category',
+    'uslugi',
     # 'order',
     # 'product',
     # 'rating',
