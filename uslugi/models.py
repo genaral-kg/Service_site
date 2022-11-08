@@ -35,7 +35,7 @@ class Uslugi(models.Model):
         verbose_name_plural = 'Услуги'
 
     def __str__(self):
-        return f'{self.title} -> {self.owner}'
+        return f'{self.category} -> {self.desc} -> {self.owner}'
 
 
 

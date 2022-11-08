@@ -101,7 +101,7 @@ class ExecuterSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
         # fields = "__all__"
-        exclude = ('password','id','is_superuser','is_staff','activation_code','user_permissions','groups','passwordImage',)
+        exclude = ('password','id','is_superuser','is_staff','activation_code','user_permissions','groups',)
 
 
 
